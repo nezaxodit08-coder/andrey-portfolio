@@ -59,6 +59,7 @@ h2 { font: 600 clamp(38px, 4.1vw, 56px)/1.08 Manrope, sans-serif; letter-spacing
 .section-aside { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 0 3px 4px 0; }
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 54px 28px; }
 .project { display: block; min-width: 0; }
+.project:focus-visible { outline: 1px solid #d8d7d1; outline-offset: 8px; }
 .project-wide { grid-column: 1/3; }
 .project-image { height: 380px; position: relative; overflow: hidden; transition: transform .45s cubic-bezier(.2,.7,.2,1); background-color: #171716; }
 .project:hover .project-image { transform: translateY(-4px); }
@@ -80,6 +81,14 @@ h2 { font: 600 clamp(38px, 4.1vw, 56px)/1.08 Manrope, sans-serif; letter-spacing
 .project-year { font-size: 9px; color: #888883; display: flex; gap: 15px; align-items: center; }
 .project-year b { font-size: 14px; color: #deddd7; font-weight: 400; transition: transform .2s; }
 .project:hover .project-year b { transform: translate(3px,-3px); }
+.image-bot { height: 356px; background: radial-gradient(ellipse at 50% 50%, #393936 0, #20201f 56%, #151514 100%); display: flex; align-items: center; overflow: hidden; }
+.bot-cookie { position: absolute; right: 15%; top: 50%; width: 190px; height: 190px; display: grid; place-items: center; font-size: 112px; border-radius: 50%; background: radial-gradient(circle at 34% 27%, #77766f, #383835 70%); filter: grayscale(1); box-shadow: 0 26px 65px #0008; transform: translateY(-50%) rotate(-12deg); }
+.bot-orbit { position: absolute; right: 7%; top: 14%; width: 360px; height: 230px; border: 1px solid #aaa9a333; border-radius: 50%; transform: rotate(-28deg); }
+.bot-orbit-two { right: 10%; top: 18%; width: 320px; height: 250px; transform: rotate(35deg); border-color: #ffffff24; }
+.bot-copy { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 15px; margin-left: 10%; max-width: 420px; }
+.bot-kicker { color: #a9a8a0; font-size: 8px; letter-spacing: 1.2px; }
+.bot-copy strong { font: 600 clamp(38px, 5vw, 62px)/1 Manrope, sans-serif; letter-spacing: -3px; }
+.bot-copy > span:last-child { color: #aaa9a3; font-size: 11px; }
 .image-forma { height: 356px; background: radial-gradient(ellipse at 49% 39%, #444440, #222221 65%, #151514); display: flex; align-items: center; justify-content: center; }
 .forma-sculpt { position: absolute; width: 205px; height: 205px; background: radial-gradient(circle at 30% 27%, #f1f0e9, #9c9b94 41%, #494944 79%, #252522); border-radius: 42% 58% 57% 43% / 42% 39% 61% 58%; box-shadow: 25px 34px 45px #0008; transform: rotate(-27deg); filter: grayscale(1) drop-shadow(0 14px 12px #0008); }
 .forma-sculpt:before, .forma-sculpt:after { content: ''; position: absolute; inset: 36px 27px; border: 1px solid #f8f7efaa; border-radius: 46% 54% 49% 51%; transform: rotate(32deg); }
@@ -143,6 +152,7 @@ footer .brand { font-size: 19px; }
   .project-image { height: 320px; } .image-morrow { height: 350px; }
   .morrow-card { left: 18%; width: 290px; } .forma-sculpt { width: 180px; height: 180px; }
   .sol-flower { right: 9%; font-size: 112px; }
+  .image-bot { height: 320px; } .bot-cookie { width: 150px; height: 150px; right: 10%; font-size: 88px; } .bot-orbit { width: 290px; height: 190px; right: 0; } .bot-orbit-two { width: 260px; height: 205px; right: 3%; }
 }
 @media (max-width: 600px) {
   .topbar { height: 62px; padding: 0 6%; } .brand { font-size: 22px; } nav { gap: 14px; }
@@ -174,7 +184,9 @@ footer .brand { font-size: 19px; }
   .morrow-type { top: 21px; left: 22px; } .image-label { top: 28px; right: 20px; font-size: 6px; }
   .morrow-card { left: 15%; top: 32%; width: 240px; min-height: 160px; padding: 19px 21px; }
   .morrow-card strong { font-size: 21px; margin-top: 13px; } .morrow-card i { right: 17px; bottom: 13px; }
-  .image-forma, .image-sol { height: 280px; } .forma-sculpt { width: 160px; height: 160px; }
+  .image-forma, .image-sol, .image-bot { height: 280px; } .forma-sculpt { width: 160px; height: 160px; }
+  .bot-copy { margin-left: 7%; max-width: 68%; gap: 12px; } .bot-copy strong { font-size: 40px; letter-spacing: -2px; } .bot-copy > span:last-child { max-width: 190px; font-size: 9px; } .bot-kicker { max-width: 190px; font-size: 6px; }
+  .bot-cookie { width: 120px; height: 120px; right: 7%; font-size: 68px; } .bot-orbit { width: 230px; height: 155px; right: -15%; } .bot-orbit-two { width: 210px; height: 170px; right: -12%; }
   .sol-title { font-size: 39px; top: 68px; } .sol-flower { font-size: 100px; right: 9%; top: 26%; }
   .project-caption { padding-top: 14px; } .project-caption h3 { font-size: 16px; }
   .all-work { margin-top: 37px; font-size: 9px; }
